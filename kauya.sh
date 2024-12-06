@@ -1,4 +1,13 @@
 #!/bin/bash
+# Prompt for license
+read -p "Enter your license key: " license
+
+# Check the license
+if [ "$license" != "Kauya" ]; then
+    echo "Invalid license key!"
+    exit 1
+fi
+
 # Navigate to the Pterodactyl directory
 cd /var/www/pterodactyl || exit
 # Download the all_in_one.zip file
